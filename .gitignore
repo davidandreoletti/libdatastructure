@@ -3,3 +3,5 @@ proj/proj.ios/datastructureapi-core-lib/*.xcodeproj/*
 !proj/proj.ios/datastructureapi-core-lib/*.xcodeproj/project.pbxproj
 !proj/proj.ios/datastructureapi-core-lib/*.xcworkspace/contents.xcworkspacedata
 
+proj/proj.ios/datastructureapi-core-lib/build
+prefix
