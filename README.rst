@@ -1,27 +1,23 @@
-libloggingapi
-
 ABOUT
 ================================================================================
 
-libloggingapi is cross platform logging API supporting:
- - loggers
- - sinks (console/file)
- - formatters
-
+libdatatructure is pedantic C99 implementation of common datatructures:
+ - double linked list
+ 
 See CHANGELOG file for further details.
 
 MOTIVATION:
 ================================================================================
 
-I am writing cross-platform C++ libraries and I needed a cross platform logging 
-API to log message.
+I am writing cross-platform C++ libraries and I needed strict C99 compliance
+to ease porting to other platforms.
 
 INSTALLATION:
 ================================================================================
 
-    cd proj
-    #To build for iOS
-    make build-ios
+This is a header only library. To copy the library headers into PREFIX (see make usage):
+
+    cd proj && make build-ios
 
 DOCUMENTATION
 ================================================================================
@@ -33,7 +29,7 @@ SOURCE
 
 Main source repository: 
 
-https://github.com/davidandreoletti/loggingapi-core-lib.git
+https://github.com/davidandreoletti/libdatastructure.git
 
 DEVELOPMENT STATUS
 ================================================================================
@@ -63,4 +59,4 @@ AUTHOR
 
 THANKS TO
 ================================================================================
-- Boost-log, log4j libraries for the inspirations.
+- Linux kernel for the linkedlist inspiration
