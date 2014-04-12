@@ -1,0 +1,680 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		C707D9CB15E99A5A00CD889E /* check-source-code-against-google-c++-style-guide */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = C707D9CC15E99A5A00CD889E /* Build configuration list for PBXAggregateTarget "check-source-code-against-google-c++-style-guide" */;
+			buildPhases = (
+				C707D9CF15E99A5F00CD889E /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "check-source-code-against-google-c++-style-guide";
+			productName = "Check source code against Google C++ Style Guide";
+		};
+		C707D9D015E99ACB00CD889E /* build-docset */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = C707D9D115E99ACB00CD889E /* Build configuration list for PBXAggregateTarget "build-docset" */;
+			buildPhases = (
+				C707D9D415E99AD100CD889E /* Build Documentation */,
+			);
+			dependencies = (
+			);
+			name = "build-docset";
+			productName = "build-docset";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		C70CEDB015E7BF5100017A65 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C70CEDAF15E7BF5100017A65 /* Foundation.framework */; };
+		C70CEDBF15E7BF5100017A65 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C70CEDBE15E7BF5100017A65 /* SenTestingKit.framework */; };
+		C70CEDC215E7BF5100017A65 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C70CEDAF15E7BF5100017A65 /* Foundation.framework */; };
+		C712B1381623A0CB001C6DCF /* datastructureapiTests.h in Resources */ = {isa = PBXBuildFile; fileRef = C75F3E3716148AA60023C0D2 /* datastructureapiTests.h */; };
+		C71A4E17170697E0004D2295 /* dlinkedlistTest.c in Sources */ = {isa = PBXBuildFile; fileRef = C71A4E16170697E0004D2295 /* dlinkedlistTest.c */; };
+		C71A4E201707EC9A004D2295 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C71A4E1E1707EC9A004D2295 /* InfoPlist.strings */; };
+		C75F3E3B16148AA60023C0D2 /* datastructureapiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C75F3E3816148AA60023C0D2 /* datastructureapiTests.m */; };
+		C7BB03A5160DECA8000AD3AA /* libdatastructureapi.a in CopyFiles */ = {isa = PBXBuildFile; fileRef = C70CEDAC15E7BF5100017A65 /* libdatastructureapi.a */; };
+		F6677AFC18F4676700468521 /* TestRunner.c in Sources */ = {isa = PBXBuildFile; fileRef = C75F3E1F16148A350023C0D2 /* TestRunner.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C70CEDC315E7BF5100017A65 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C70CEDA315E7BF5100017A65 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C70CEDAB15E7BF5100017A65;
+			remoteInfo = "settingsapi-core-lib";
+		};
+		C7744F11160D39B500B4D516 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C70CEDA315E7BF5100017A65 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C707D9CB15E99A5A00CD889E;
+			remoteInfo = "check-source-code-against-google-c++-style-guide";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C70CEDAA15E7BF5100017A65 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = "${PROJECT_DIR}/../../../prefix";
+			dstSubfolderSpec = 0;
+			files = (
+				C7BB03A5160DECA8000AD3AA /* libdatastructureapi.a in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		C70CEDAC15E7BF5100017A65 /* libdatastructureapi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libdatastructureapi.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C70CEDAF15E7BF5100017A65 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C70CEDB315E7BF5100017A65 /* datastructureapi-core-lib-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "datastructureapi-core-lib-Prefix.pch"; sourceTree = "<group>"; };
+		C70CEDBD15E7BF5100017A65 /* datastructureapiTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = datastructureapiTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C70CEDBE15E7BF5100017A65 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		C71A4E16170697E0004D2295 /* dlinkedlistTest.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = dlinkedlistTest.c; sourceTree = "<group>"; };
+		C71A4E1F1707EC9A004D2295 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "datastructureapi-core-libTests/en.lproj/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
+		C75F3E1516148A1A0023C0D2 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		C75F3E1916148A350023C0D2 /* TestRunner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestRunner.h; sourceTree = "<group>"; };
+		C75F3E1F16148A350023C0D2 /* TestRunner.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TestRunner.c; sourceTree = "<group>"; };
+		C75F3E3716148AA60023C0D2 /* datastructureapiTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = datastructureapiTests.h; sourceTree = "<group>"; };
+		C75F3E3816148AA60023C0D2 /* datastructureapiTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = datastructureapiTests.m; sourceTree = "<group>"; };
+		C7B86B9E170E586C007C47D4 /* macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = macros.h; sourceTree = "<group>"; };
+		C7EC7983162327B1003F39D6 /* datastructureapi-core-libTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; name = "datastructureapi-core-libTests-Info.plist"; path = "datastructureapi-core-libTests/datastructureapi-core-libTests-Info.plist"; sourceTree = "<group>"; };
+		F63B1BC218F62355005AD928 /* dlinkedlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dlinkedlist.h; sourceTree = "<group>"; };
+		F63B1BC518F623B1005AD928 /* dlinkedlistTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dlinkedlistTest.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C70CEDA915E7BF5100017A65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C70CEDB015E7BF5100017A65 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C70CEDB915E7BF5100017A65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C70CEDBF15E7BF5100017A65 /* SenTestingKit.framework in Frameworks */,
+				C70CEDC215E7BF5100017A65 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C707D9A215E912BE00CD889E /* src */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = src;
+			path = ../../../src;
+			sourceTree = "<group>";
+		};
+		C707D9AD15E912D300CD889E /* test */ = {
+			isa = PBXGroup;
+			children = (
+				C75F3E1616148A350023C0D2 /* include */,
+				C75F3E1A16148A350023C0D2 /* src */,
+			);
+			name = test;
+			path = ../../../test;
+			sourceTree = "<group>";
+		};
+		C707D9D715E99D7700CD889E /* include */ = {
+			isa = PBXGroup;
+			children = (
+				C736D42317068AAC00391551 /* datastructure */,
+				C75F3E1516148A1A0023C0D2 /* README */,
+			);
+			name = include;
+			path = ../../../include;
+			sourceTree = "<group>";
+		};
+		C70CEDA115E7BF5100017A65 = {
+			isa = PBXGroup;
+			children = (
+				C707D9D715E99D7700CD889E /* include */,
+				C707D9AD15E912D300CD889E /* test */,
+				C707D9A215E912BE00CD889E /* src */,
+				C70CEDB115E7BF5100017A65 /* datastructureapi */,
+				C70CEDC615E7BF5100017A65 /* datastructureapiTests */,
+				C70CEDAE15E7BF5100017A65 /* Frameworks */,
+				C70CEDAD15E7BF5100017A65 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C70CEDAD15E7BF5100017A65 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C70CEDAC15E7BF5100017A65 /* libdatastructureapi.a */,
+				C70CEDBD15E7BF5100017A65 /* datastructureapiTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C70CEDAE15E7BF5100017A65 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C70CEDAF15E7BF5100017A65 /* Foundation.framework */,
+				C70CEDBE15E7BF5100017A65 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C70CEDB115E7BF5100017A65 /* datastructureapi */ = {
+			isa = PBXGroup;
+			children = (
+				C70CEDB215E7BF5100017A65 /* Supporting Files */,
+			);
+			name = datastructureapi;
+			path = "datastructureapi-core-lib";
+			sourceTree = "<group>";
+		};
+		C70CEDB215E7BF5100017A65 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C70CEDB315E7BF5100017A65 /* datastructureapi-core-lib-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C70CEDC615E7BF5100017A65 /* datastructureapiTests */ = {
+			isa = PBXGroup;
+			children = (
+				C75F3E3316148AA60023C0D2 /* datastructureapi-core-libTests */,
+				C70CEDC715E7BF5100017A65 /* Supporting Files */,
+			);
+			name = datastructureapiTests;
+			path = "datastructureapi-core-libTests";
+			sourceTree = "<group>";
+		};
+		C70CEDC715E7BF5100017A65 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C71A4E1E1707EC9A004D2295 /* InfoPlist.strings */,
+				C7EC7983162327B1003F39D6 /* datastructureapi-core-libTests-Info.plist */,
+			);
+			name = "Supporting Files";
+			path = "datastructureapi-core-libTests";
+			sourceTree = "<group>";
+		};
+		C71A4E13170697E0004D2295 /* datastructureapi */ = {
+			isa = PBXGroup;
+			children = (
+				C71A4E14170697E0004D2295 /* list */,
+			);
+			path = datastructureapi;
+			sourceTree = "<group>";
+		};
+		C71A4E14170697E0004D2295 /* list */ = {
+			isa = PBXGroup;
+			children = (
+				C71A4E15170697E0004D2295 /* linkedlist */,
+			);
+			path = list;
+			sourceTree = "<group>";
+		};
+		C71A4E15170697E0004D2295 /* linkedlist */ = {
+			isa = PBXGroup;
+			children = (
+				C71A4E16170697E0004D2295 /* dlinkedlistTest.c */,
+			);
+			path = linkedlist;
+			sourceTree = "<group>";
+		};
+		C736D42317068AAC00391551 /* datastructure */ = {
+			isa = PBXGroup;
+			children = (
+				C7B86B9E170E586C007C47D4 /* macros.h */,
+				C736D42417068AAC00391551 /* list */,
+			);
+			path = datastructure;
+			sourceTree = "<group>";
+		};
+		C736D42417068AAC00391551 /* list */ = {
+			isa = PBXGroup;
+			children = (
+				F63B1BC218F62355005AD928 /* dlinkedlist.h */,
+			);
+			path = list;
+			sourceTree = "<group>";
+		};
+		C75F3E1616148A350023C0D2 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				F6677AF518F4430A00468521 /* datastructureapi */,
+				C75F3E1916148A350023C0D2 /* TestRunner.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		C75F3E1A16148A350023C0D2 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				C71A4E13170697E0004D2295 /* datastructureapi */,
+				C75F3E1F16148A350023C0D2 /* TestRunner.c */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		C75F3E3316148AA60023C0D2 /* datastructureapi-core-libTests */ = {
+			isa = PBXGroup;
+			children = (
+				C75F3E3716148AA60023C0D2 /* datastructureapiTests.h */,
+				C75F3E3816148AA60023C0D2 /* datastructureapiTests.m */,
+			);
+			path = "datastructureapi-core-libTests";
+			sourceTree = SOURCE_ROOT;
+		};
+		F63B1BC418F623B1005AD928 /* list */ = {
+			isa = PBXGroup;
+			children = (
+				F63B1BC518F623B1005AD928 /* dlinkedlistTest.h */,
+			);
+			name = list;
+			sourceTree = "<group>";
+		};
+		F6677AF518F4430A00468521 /* datastructureapi */ = {
+			isa = PBXGroup;
+			children = (
+				F6677AF618F4430A00468521 /* list */,
+			);
+			path = datastructureapi;
+			sourceTree = "<group>";
+		};
+		F6677AF618F4430A00468521 /* list */ = {
+			isa = PBXGroup;
+			children = (
+				F63B1BC418F623B1005AD928 /* list */,
+			);
+			path = list;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C70CEDAB15E7BF5100017A65 /* datastructureapi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C70CEDD115E7BF5100017A65 /* Build configuration list for PBXNativeTarget "datastructureapi" */;
+			buildPhases = (
+				C70CEDA815E7BF5100017A65 /* Sources */,
+				C70CEDA915E7BF5100017A65 /* Frameworks */,
+				C70CEDAA15E7BF5100017A65 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C7744F12160D39B500B4D516 /* PBXTargetDependency */,
+			);
+			name = datastructureapi;
+			productName = "settingsapi-core-lib";
+			productReference = C70CEDAC15E7BF5100017A65 /* libdatastructureapi.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C70CEDBC15E7BF5100017A65 /* datastructureapiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C70CEDD415E7BF5100017A65 /* Build configuration list for PBXNativeTarget "datastructureapiTests" */;
+			buildPhases = (
+				C70CEDB815E7BF5100017A65 /* Sources */,
+				C70CEDB915E7BF5100017A65 /* Frameworks */,
+				C70CEDBA15E7BF5100017A65 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C70CEDC415E7BF5100017A65 /* PBXTargetDependency */,
+			);
+			name = datastructureapiTests;
+			productName = "settingsapi-core-libTests";
+			productReference = C70CEDBD15E7BF5100017A65 /* datastructureapiTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C70CEDA315E7BF5100017A65 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "IO Stark";
+			};
+			buildConfigurationList = C70CEDA615E7BF5100017A65 /* Build configuration list for PBXProject "datastructureapi-core-lib" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C70CEDA115E7BF5100017A65;
+			productRefGroup = C70CEDAD15E7BF5100017A65 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C70CEDAB15E7BF5100017A65 /* datastructureapi */,
+				C70CEDBC15E7BF5100017A65 /* datastructureapiTests */,
+				C707D9CB15E99A5A00CD889E /* check-source-code-against-google-c++-style-guide */,
+				C707D9D015E99ACB00CD889E /* build-docset */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C70CEDBA15E7BF5100017A65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C712B1381623A0CB001C6DCF /* datastructureapiTests.h in Resources */,
+				C71A4E201707EC9A004D2295 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C707D9CF15E99A5F00CD889E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd ${PROJECT_DIR}/../../../scripts/google-cpp-style-guide\n#chmod 700 ./check.sh\n#./check.sh ${PROJECT_DIR}/../../../include\n#./check.sh ${PROJECT_DIR}/../../../src\n#./check.sh ${PROJECT_DIR}/../../../test";
+		};
+		C707D9D415E99AD100CD889E /* Build Documentation */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build Documentation";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd ${PROJECT_DIR}/../../../scripts/doc\nchmod 700 ./tool-docset.sh\n./tool-docset.sh -f \"${PROJECT_DIR}/../../../doc/developer/developer.doxyfile\" -s \"${PROJECT_DIR}/../../../src \\\n${PROJECT_DIR}/../../../include\" -o \"${PROJECT_DIR}/../../../doc/developer\" -n \"API\" -r \"com.iostark\" -l \"true\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C70CEDA815E7BF5100017A65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C70CEDB815E7BF5100017A65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C75F3E3B16148AA60023C0D2 /* datastructureapiTests.m in Sources */,
+				C71A4E17170697E0004D2295 /* dlinkedlistTest.c in Sources */,
+				F6677AFC18F4676700468521 /* TestRunner.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C70CEDC415E7BF5100017A65 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C70CEDAB15E7BF5100017A65 /* datastructureapi */;
+			targetProxy = C70CEDC315E7BF5100017A65 /* PBXContainerItemProxy */;
+		};
+		C7744F12160D39B500B4D516 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C707D9CB15E99A5A00CD889E /* check-source-code-against-google-c++-style-guide */;
+			targetProxy = C7744F11160D39B500B4D516 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C71A4E1E1707EC9A004D2295 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C71A4E1F1707EC9A004D2295 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C707D9CD15E99A5A00CD889E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C707D9CE15E99A5A00CD889E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C707D9D215E99ACB00CD889E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C707D9D315E99ACB00CD889E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C70CEDCF15E7BF5100017A65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++98";
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_PEDANTIC = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				LIBRARY_SEARCH_PATHS = "";
+				SDKROOT = iphoneos;
+				VALID_ARCHS = "armv6 armv7";
+			};
+			name = Debug;
+		};
+		C70CEDD015E7BF5100017A65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++98";
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_PEDANTIC = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				LIBRARY_SEARCH_PATHS = "";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv6 armv7";
+			};
+			name = Release;
+		};
+		C70CEDD215E7BF5100017A65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/datastructureapi_core_lib.dst;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "datastructureapi-core-lib/datastructureapi-core-lib-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					"NDEBUG=1",
+				);
+				HEADER_SEARCH_PATHS = (
+					"${SRCROOT}/../../../include",
+					"$(inherited)",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		C70CEDD315E7BF5100017A65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/datastructureapi_core_lib.dst;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "datastructureapi-core-lib/datastructureapi-core-lib-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"${SRCROOT}/../../../include",
+					"$(inherited)",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		C70CEDD515E7BF5100017A65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "datastructureapi-core-lib/datastructureapi-core-lib-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${SRCROOT}/../../../include",
+					"${SRCROOT}/../../../test/include",
+				);
+				INFOPLIST_FILE = "datastructureapi-core-libTests/datastructureapi-core-libTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_AFTER_BUILD = YES;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		C70CEDD615E7BF5100017A65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "datastructureapi-core-lib/datastructureapi-core-lib-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${SRCROOT}/../../../include",
+					"${SRCROOT}/../../../test/include",
+				);
+				INFOPLIST_FILE = "datastructureapi-core-libTests/datastructureapi-core-libTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_AFTER_BUILD = YES;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C707D9CC15E99A5A00CD889E /* Build configuration list for PBXAggregateTarget "check-source-code-against-google-c++-style-guide" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C707D9CD15E99A5A00CD889E /* Debug */,
+				C707D9CE15E99A5A00CD889E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C707D9D115E99ACB00CD889E /* Build configuration list for PBXAggregateTarget "build-docset" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C707D9D215E99ACB00CD889E /* Debug */,
+				C707D9D315E99ACB00CD889E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C70CEDA615E7BF5100017A65 /* Build configuration list for PBXProject "datastructureapi-core-lib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C70CEDCF15E7BF5100017A65 /* Debug */,
+				C70CEDD015E7BF5100017A65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C70CEDD115E7BF5100017A65 /* Build configuration list for PBXNativeTarget "datastructureapi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C70CEDD215E7BF5100017A65 /* Debug */,
+				C70CEDD315E7BF5100017A65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C70CEDD415E7BF5100017A65 /* Build configuration list for PBXNativeTarget "datastructureapiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C70CEDD515E7BF5100017A65 /* Debug */,
+				C70CEDD615E7BF5100017A65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C70CEDA315E7BF5100017A65 /* Project object */;
+}
