@@ -32,14 +32,12 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		C70CEDB015E7BF5100017A65 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C70CEDAF15E7BF5100017A65 /* Foundation.framework */; };
 		C70CEDBF15E7BF5100017A65 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C70CEDBE15E7BF5100017A65 /* SenTestingKit.framework */; };
 		C70CEDC215E7BF5100017A65 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C70CEDAF15E7BF5100017A65 /* Foundation.framework */; };
 		C712B1381623A0CB001C6DCF /* datastructureapiTests.h in Resources */ = {isa = PBXBuildFile; fileRef = C75F3E3716148AA60023C0D2 /* datastructureapiTests.h */; };
 		C71A4E17170697E0004D2295 /* dlinkedlistTest.c in Sources */ = {isa = PBXBuildFile; fileRef = C71A4E16170697E0004D2295 /* dlinkedlistTest.c */; };
 		C71A4E201707EC9A004D2295 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C71A4E1E1707EC9A004D2295 /* InfoPlist.strings */; };
 		C75F3E3B16148AA60023C0D2 /* datastructureapiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C75F3E3816148AA60023C0D2 /* datastructureapiTests.m */; };
-		C7BB03A5160DECA8000AD3AA /* libdatastructureapi.a in CopyFiles */ = {isa = PBXBuildFile; fileRef = C70CEDAC15E7BF5100017A65 /* libdatastructureapi.a */; };
 		F6677AFC18F4676700468521 /* TestRunner.c in Sources */ = {isa = PBXBuildFile; fileRef = C75F3E1F16148A350023C0D2 /* TestRunner.c */; };
 /* End PBXBuildFile section */
 
@@ -59,19 +57,6 @@
 			remoteInfo = "check-source-code-against-google-c++-style-guide";
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		C70CEDAA15E7BF5100017A65 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 8;
-			dstPath = "${PROJECT_DIR}/../../../prefix";
-			dstSubfolderSpec = 0;
-			files = (
-				C7BB03A5160DECA8000AD3AA /* libdatastructureapi.a in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C70CEDAC15E7BF5100017A65 /* libdatastructureapi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libdatastructureapi.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,14 +78,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		C70CEDA915E7BF5100017A65 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C70CEDB015E7BF5100017A65 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C70CEDB915E7BF5100017A65 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -308,9 +285,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C70CEDD115E7BF5100017A65 /* Build configuration list for PBXNativeTarget "datastructureapi" */;
 			buildPhases = (
-				C70CEDA815E7BF5100017A65 /* Sources */,
-				C70CEDA915E7BF5100017A65 /* Frameworks */,
-				C70CEDAA15E7BF5100017A65 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -412,13 +386,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C70CEDA815E7BF5100017A65 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C70CEDB815E7BF5100017A65 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
