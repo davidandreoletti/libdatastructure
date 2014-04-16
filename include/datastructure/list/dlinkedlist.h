@@ -1,15 +1,31 @@
-//
-//  dlinkedlist.h
-//  libdatastructure
-//
-//  Created by Andreoletti David.
-//  Copyright 2012 IO Stark. All rights reserved.
-//
+/**************************************************************************
+ * MIT LICENSE
+ *
+ * Copyright (c) 2012-2014, David Andreoletti <http://davidandreoletti.com>
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ **************************************************************************/
 
 /**
- *  Double LinkedList inspired from Linux Kernel's list.h
+ *  Double LinkedList (instrusive list) inspired from Linux Kernel's list.h
  *  
- *  All functions/macros notstarting with __ are Public API.
+ *  All functions/macros not starting with __ or _ are Public API.
  */
 
 #ifndef INCLUDE_DATASTRUCTURE_LIST_DLINKEDLIST_H_
@@ -20,6 +36,7 @@
 #include <assert.h>
 #include <stdint.h>
 #include "datastructure/macros.h"
+#include "datastructure/iterator/iterator.h"
 
 #define _INT_LEAST_32_T int_least32_t
 
@@ -77,7 +94,7 @@ EXTERN_C_BEGIN
     __dlinkedlist_container_of((ptr)->next, containertype, member)
 
 /**
- * Iterates over a list
+ * Iterates over a list forward
  *
  * \param head	Lists head.
  * \param node	the &struct dlinkedlist_node to use as a loop cursor.
@@ -481,6 +498,113 @@ static inline void dlinkedlist_split(struct dlinkedlist_node* head,
     if (dlinkedlist_empty(head)) {return;}
     if (head == node) {return;}
     __dlinkedlist_split(head, list, node, headSize, listSize);
+}
+
+/**
+ *
+ * Iterator Support
+ *
+ */
+
+struct iterator_dlinkedlist {
+    struct iterator _base;
+    struct dlinkedlist_node* _current;
+    struct dlinkedlist_node* _head;
+    struct dlinkedlist_node* _tail;
+    struct dlinkedlist_node _sentineltail;
+};
+
+static inline void* __dlinkedlist_iterator_next (struct iterator* iterator) {
+    if (iterator == NULL) {
+        return NULL;
+    }
+    struct iterator_dlinkedlist* iterator2 = (struct iterator_dlinkedlist*) iterator;
+    if (iterator2->_current != iterator2->_tail) {
+        iterator2->_current = iterator2->_current->next;
+    }
+    return iterator2->_current;
+}
+
+static inline void* __dlinkedlist_iterator_prev (struct iterator* iterator) {
+    if (iterator == NULL) {
+        return NULL;
+    }
+    struct iterator_dlinkedlist* iterator2 = (struct iterator_dlinkedlist*) iterator;
+    if (iterator2->_current != iterator2->_head) {
+        iterator2->_current = iterator2->_current->prev;
+    }
+    return iterator2->_current;
+}
+
+void* __dlinkedlist_iterator_current (struct iterator* iterator) {
+    if (iterator == NULL) {
+        return NULL;
+    }
+    struct iterator_dlinkedlist* iterator2 = (struct iterator_dlinkedlist*) iterator;
+    return iterator2->_current;
+}
+
+void* __dlinkedlist_iterator_begin (struct iterator* iterator) {
+    if (iterator == NULL) {
+        return NULL;
+    }
+    struct iterator_dlinkedlist* iterator2 = (struct iterator_dlinkedlist*) iterator;
+    return iterator2->_head;
+}
+
+void* __dlinkedlist_iterator_end (struct iterator* iterator) {
+    if (iterator == NULL) {
+        return NULL;
+    }
+    struct iterator_dlinkedlist* iterator2 = (struct iterator_dlinkedlist*) iterator;
+    return iterator2->_tail;
+}
+
+/**
+ *  Get an iterator on a list
+ *
+ *  ALL iterator methods returns "struct dlinkedlist_node*" type
+ *
+ *  Time Complexity:    O(1)
+ *  Space Complexity:   O(1)
+ *
+ *  \param head The HEAD of the list
+ *  \param headSize head parameter's size - updated only iff headSize is NOT NULL. NULL permitted.
+ */
+static inline struct iterator* dlinkedlist_iterator_get(struct dlinkedlist_node* head,
+                                     _INT_LEAST_32_T* headSize) {
+    ASSERT(head != NULL)
+    
+    struct iterator_dlinkedlist* iterator = malloc(sizeof(struct iterator_dlinkedlist));
+    iterator->_base._mode = ITERATOR_ACCESS_MODE_FORWARD | ITERATOR_ACCESS_MODE_BACKWARD;
+    iterator->_base.begin = __dlinkedlist_iterator_begin;
+    iterator->_base.end = __dlinkedlist_iterator_end;
+    iterator->_base.next = __dlinkedlist_iterator_next;
+    iterator->_base.prev = __dlinkedlist_iterator_prev;
+    iterator->_base.current = __dlinkedlist_iterator_current;
+    iterator->_head = head;
+    iterator->_current = head;
+    dlinkedlist_init_head(&(iterator->_sentineltail), NULL);
+    iterator->_sentineltail.next = head;
+    iterator->_sentineltail.prev = head->prev;
+    iterator->_tail = &(iterator->_sentineltail);
+    return &(iterator->_base);
+}
+
+/**
+ *  Free iterator
+ *
+ *  Time Complexity:    O(1)
+ *  Space Complexity:   O(1)
+ *
+ *  \param iterator The iterator
+ */
+static inline void dlinkedlist_iterator_free(struct iterator* iterator) {
+    if (iterator == NULL) {
+        return;
+    }
+    struct iterator_dlinkedlist* iterator2 = (struct iterator_dlinkedlist*) iterator;
+    free(iterator2);
 }
 
 EXTERN_C_END

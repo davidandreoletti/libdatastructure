@@ -75,6 +75,7 @@
 		C7EC7983162327B1003F39D6 /* datastructureapi-core-libTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; name = "datastructureapi-core-libTests-Info.plist"; path = "datastructureapi-core-libTests/datastructureapi-core-libTests-Info.plist"; sourceTree = "<group>"; };
 		F63B1BC218F62355005AD928 /* dlinkedlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dlinkedlist.h; sourceTree = "<group>"; };
 		F63B1BC518F623B1005AD928 /* dlinkedlistTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dlinkedlistTest.h; sourceTree = "<group>"; };
+		F6D70DE318FC148A00F911C8 /* iterator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iterator.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +214,7 @@
 		C736D42317068AAC00391551 /* datastructure */ = {
 			isa = PBXGroup;
 			children = (
+				F6D70DE218FC148A00F911C8 /* iterator */,
 				C7B86B9E170E586C007C47D4 /* macros.h */,
 				C736D42417068AAC00391551 /* list */,
 			);
@@ -276,6 +278,14 @@
 				F63B1BC418F623B1005AD928 /* list */,
 			);
 			path = list;
+			sourceTree = "<group>";
+		};
+		F6D70DE218FC148A00F911C8 /* iterator */ = {
+			isa = PBXGroup;
+			children = (
+				F6D70DE318FC148A00F911C8 /* iterator.h */,
+			);
+			path = iterator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

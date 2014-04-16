@@ -377,49 +377,120 @@ void dlinkedlist_split0(struct fixture* f) {
     }
 }
 
+#define DECALRE_LIST_SIZE_3(listhead) \
+    struct foo baz = { \
+        .bar = 10, \
+        .list = MALLOC_NODE() \
+    }; \
+    struct foo baz2 = { \
+        .bar = 20, \
+        .list = MALLOC_NODE() \
+    }; \
+    struct foo baz3 = { \
+        .bar = 30, \
+        .list = MALLOC_NODE() \
+    }; \
+    dlinkedlist_init_head(&(baz.list), NULL); \
+    dlinkedlist_init_head(&(baz2.list), NULL); \
+    dlinkedlist_init_head(&(baz3.list), NULL); \
+    dlinkedlist_add_tail(&(baz.list), &(baz2.list), NULL); \
+    dlinkedlist_add_tail(&(baz2.list), &(baz3.list), NULL); \
+    listhead = &(baz.list);
+
+void dlinkedlist_iterator_get0(struct fixture* f) {
+    struct dlinkedlist_node* head;
+    DECALRE_LIST_SIZE_3(head);
+    struct iterator* it = dlinkedlist_iterator_get(head, NULL);
+    REQUIRE(it != NULL);
+}
+
+void dlinkedlist_iterator_free0(struct fixture* f) {
+    struct dlinkedlist_node* head;
+    DECALRE_LIST_SIZE_3(head);
+    struct iterator* it = dlinkedlist_iterator_get(head, NULL);
+    dlinkedlist_iterator_free(it);
+    REQUIRE(it != NULL);
+}
+
+void dlinkedlist_iterator_item_next0(struct fixture* f) {
+    struct dlinkedlist_node* head;
+    DECALRE_LIST_SIZE_3(head);
+    struct iterator* it = dlinkedlist_iterator_get(head, NULL);
+    REQUIRE(it != NULL);
+    void* node = iterator_item_next(it);
+    struct foo* bar = dlinkedlist_entry(node, struct foo, list);
+    REQUIRE(bar = &baz2);
+}
+
+void dlinkedlist_iterator_item_prev0(struct fixture* f) {
+    struct dlinkedlist_node* head;
+    DECALRE_LIST_SIZE_3(head);
+    struct iterator* it = dlinkedlist_iterator_get(head, NULL);
+    REQUIRE(it != NULL);
+    void* node = iterator_item_prev(it);
+    struct foo* bar = dlinkedlist_entry(node, struct foo, list);
+    REQUIRE(bar = &baz3);
+}
+
+void dlinkedlist_iterator_item_current0(struct fixture* f) {
+    struct dlinkedlist_node* head;
+    DECALRE_LIST_SIZE_3(head);
+    struct iterator* it = dlinkedlist_iterator_get(head, NULL);
+    REQUIRE(it != NULL);
+    void* node = iterator_item_next(it);
+    void* nodeSame = iterator_item_current(it);
+    REQUIRE(node = &nodeSame);
+    struct foo* bar = dlinkedlist_entry(node, struct foo, list);
+    REQUIRE(bar = &baz2);
+}
+
+void dlinkedlist_iterator_item_begin0(struct fixture* f) {
+    struct dlinkedlist_node* head;
+    DECALRE_LIST_SIZE_3(head);
+    struct iterator* it = dlinkedlist_iterator_get(head, NULL);
+    REQUIRE(it != NULL);
+    void* node = iterator_item_begin(it);
+    struct foo* bar = dlinkedlist_entry(node, struct foo, list);
+    REQUIRE(bar = &baz);
+}
+
+void dlinkedlist_iterator_item_end0(struct fixture* f) {
+    struct dlinkedlist_node* head;
+    DECALRE_LIST_SIZE_3(head);
+    struct iterator* it = dlinkedlist_iterator_get(head, NULL);
+    REQUIRE(it != NULL);
+    void* node = iterator_item_end(it);
+    struct foo* bar = dlinkedlist_entry(node, struct foo, list);
+    REQUIRE(bar = &baz3);
+}
+
+#define TEST_CASE(nameTest, fixture) \
+    fixture_setup(fixture); \
+    nameTest(fixture); \
+    fixture_teardown(fixture); \
+
 int run_unit_tests_dlinkedlist() {
     struct fixture f = {0};
-    fixture_setup(&f);
-    dlinkedlist_macro_entry0(&f);
-    fixture_teardown(&f);
-    fixture_setup(&f);
-    dlinkedlist_macro_prev_entry0(&f);
-    fixture_teardown(&f);
-    fixture_setup(&f);
-    dlinkedlist_macro_next_entry0(&f);
-    fixture_teardown(&f);
-    fixture_setup(&f);
-    dlinkedlist_init_head0(&f);
-    fixture_teardown(&f);
-    fixture_setup(&f);
-    dlinkedlist_free0(&f);
-    fixture_teardown(&f);
-    fixture_setup(&f);
-    dlinkedlist_empty_0(&f);
-    fixture_teardown(&f);
-    fixture_setup(&f);
-    dlinkedlist_size_0(&f);
-    fixture_teardown(&f);
-    fixture_setup(&f);
-    dlinkedlist_add_head_0(&f);
-    fixture_teardown(&f);
-    fixture_setup(&f);
-    dlinkedlist_add_tail_0(&f);
-    fixture_teardown(&f);
-    fixture_setup(&f);
-    dlinkedlist_remove_0(&f);
-    fixture_teardown(&f);
-    fixture_setup(&f);
-    dlinkedlist_remove_0(&f);
-    fixture_teardown(&f);
-    fixture_setup(&f);
-    dlinkedlist_splice0(&f);
-    fixture_teardown(&f);
-    fixture_setup(&f);
-    dlinkedlist_singular0(&f);
-    fixture_teardown(&f);
-    fixture_setup(&f);
-    dlinkedlist_split0(&f);
-    fixture_teardown(&f);
+    TEST_CASE(dlinkedlist_macro_entry0,&f)
+    TEST_CASE(dlinkedlist_macro_prev_entry0,&f)
+    TEST_CASE(dlinkedlist_macro_next_entry0,&f)
+    TEST_CASE(dlinkedlist_init_head0,&f)
+    TEST_CASE(dlinkedlist_free0,&f)
+    TEST_CASE(dlinkedlist_empty_0,&f)
+    TEST_CASE(dlinkedlist_size_0,&f)
+    TEST_CASE(dlinkedlist_add_head_0,&f)
+    TEST_CASE(dlinkedlist_add_tail_0,&f)
+    TEST_CASE(dlinkedlist_remove_0,&f)
+    TEST_CASE(dlinkedlist_remove_0,&f)
+    TEST_CASE(dlinkedlist_splice0,&f)
+    TEST_CASE(dlinkedlist_singular0,&f)
+    TEST_CASE(dlinkedlist_split0,&f)
+    TEST_CASE(dlinkedlist_iterator_get0,&f)
+    TEST_CASE(dlinkedlist_iterator_free0,&f)
+    TEST_CASE(dlinkedlist_iterator_item_prev0,&f)
+    TEST_CASE(dlinkedlist_iterator_item_next0,&f)
+    TEST_CASE(dlinkedlist_iterator_item_current0,&f)
+    TEST_CASE(dlinkedlist_iterator_item_begin0,&f)
+    TEST_CASE(dlinkedlist_iterator_item_end0,&f)
     return 1;
 }

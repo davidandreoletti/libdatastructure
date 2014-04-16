@@ -22,16 +22,27 @@
  * THE SOFTWARE.
  **************************************************************************/
 
-/**
- *  Iterator 
- *  
- *  All functions/macros not starting with __ or _ are Public API.
- */
-
 #ifndef INCLUDE_DATASTRUCTURE_ITERATOR_ITERATOR_H_
 #define INCLUDE_DATASTRUCTURE_ITERATOR_ITERATOR_H_
 
 #include "datastructure/macros.h"
+
+/**
+ *  Iterator over a sequence of item
+ *
+ *  All functions/macros not starting with __ or _ are Public API.
+ *
+ *  Important notes:
+ *
+ *  Datastrutures providing iterators SHOULD provide following operations:
+ *
+ *  - To get an iterator :   
+ *    struct iterator* <datastructure name>_iterator_get(...)
+ * 
+ *  - To free the iterator :
+ *    void <datastructure name>_iterator_free(struct iterator* iterator, ...)
+ *
+ */
 
 enum iterator_mode {
     ITERATOR_ACCESS_MODE_FORWARD    = 1 << 0,                // Can go to next
